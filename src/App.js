@@ -1,8 +1,11 @@
+import { AuthProvider } from "./context/authContext";
 import { Singup } from "./pages/Signup";
 
 function App() {
   return (
-   <Singup/>
+    <AuthProvider>
+      <Singup/>
+    </AuthProvider>
   );
 }
 

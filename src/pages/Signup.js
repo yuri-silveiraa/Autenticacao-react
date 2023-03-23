@@ -1,14 +1,22 @@
 import React,{ useState } from "react";
+import { useAuth } from "../context/authContext";
 
 
 export const Singup = () => {
+    const { signUp } = useAuth()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
+
+    function handleSubmit(element){
+        element.preventDefault()
+        
+    }
+
     return (
         <div className="container">
             <h2>Singup</h2>
-            <form>
+            <form onClick={handleSubmit} >
                 <label>Email</label>
                 <input 
                     type="email"
