@@ -277,7 +277,6 @@ input[type="week"],
 input:not([type]),
 textarea,
 select {
-  -webkit-appearance: none;
   background-color: transparent;
   border: 0.1rem solid #d1d1d1;
   border-radius: 0.4rem;
@@ -358,6 +357,10 @@ input[type="radio"] {
   padding: 0 2rem;
   position: relative;
   width: 100%;
+  align-items: center;
+}
+.container h2 {
+  text-align: center;
 }
 
 .row {
