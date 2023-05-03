@@ -1,5 +1,5 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import { useAuth } from "../context/authContext"
 
 export const UserProfile = () => {
@@ -17,9 +17,10 @@ export const UserProfile = () => {
 
     return (
         <div className="container">
+            <div className="header">
             <h1>Perfil de Usuário</h1>
-
             <button onClick={handleLogout}>Sair</button>
+            </div>
 
             <table>
                 <thead>
@@ -31,7 +32,9 @@ export const UserProfile = () => {
                 <tbody>
                     <tr key="">
                         <td>{currentUser.email}</td>
-                        <td>Atualizar perfil do usuário</td>
+                        <td>
+                        <Link to="/update-profile">Atualizar perfil do usuário</Link>
+                        </td>
                     </tr>
                 </tbody>
             </table>

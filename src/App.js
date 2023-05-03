@@ -3,6 +3,8 @@ import { AuthProvider } from "./context/authContext";
 import { Singup } from "./pages/Signup";
 import { UserProfile } from "./pages/UserProfile";
 import { Login } from "./pages/Login";
+import { UpdateProfile } from "./pages/UpdateProfile";
+import { ForgotPassword } from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
           <Route path="/signup" element={<Singup/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/" element={<UserProfile/>}/>
+          <Route path="/update-profile" element={<UpdateProfile/>}/>
+          <Route path="/forgot-password" element={<ForgotPassword/>}/>
           <Route 
             path="*" 
             element={
