@@ -1,8 +1,10 @@
 import React,{ useState } from "react";
 import { useAuth } from "../context/authContext";
+import { useNavigate } from "react-router-dom"
 
 
 export const Singup = () => {
+    const navigate = useNavigate()
     const { signUp } = useAuth()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -26,6 +28,8 @@ export const Singup = () => {
 
         try{
             await signUp(email, password)
+            alert("Sua conta foi criada com sucesso")
+            navigate("/login")
         }catch(error) {
             alert("occoreu um erro ao tentar criar um usuario")
         }

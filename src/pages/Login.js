@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import { useAuth } from "../context/authContext"
 
 export const Login = () => {
@@ -47,6 +47,17 @@ export const Login = () => {
             />
             <button disabled={loading} className="button-block" type="submit">Login</button>
         </form>
+
+        <div className="center">
+                <div>
+                <p>
+                    <Link to="/forgot-password">Esqueceu a senha?</Link>
+                </p>
+                <p>
+                    <Link to="/signup"> Cadastre-se </Link>
+                </p>
+                </div>
+            </div>
     </div>
     )
 }
