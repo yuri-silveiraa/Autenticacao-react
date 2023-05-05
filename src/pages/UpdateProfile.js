@@ -32,7 +32,7 @@ export const UpdateProfile = () => {
     return (
         <div className="container">
             <div className="header">
-                <h1>Atualizar Perfil</h1>
+                <h2>Atualizar Perfil</h2>
             </div>
 
             <form onSubmit={handleSubmit}>

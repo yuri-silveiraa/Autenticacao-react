@@ -1,6 +1,6 @@
 import React,{ useState } from "react";
 import { useAuth } from "../context/authContext";
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 
 export const Singup = () => {
@@ -9,20 +9,24 @@ export const Singup = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
+    const [loading, setLoading] = useState(false)
 
     console.log(password)
     console.log(confirmPassword)
     async function handleSubmit(element){
         element.preventDefault()
         
-        
+        setLoading(true)
+
         if(password.length <6){
             alert("O password deve ter 6 caracteres no minimo")
+            setLoading(false)
             return
         }
 
         if(password !== confirmPassword){
             alert("As senhas não conferem")
+            setLoading(false)
             return
         }
 
@@ -34,6 +38,7 @@ export const Singup = () => {
             alert("occoreu um erro ao tentar criar um usuario")
         }
 
+        setLoading(false)
         setEmail("")
         setPassword("")
         setConfirmPassword("")
@@ -41,7 +46,7 @@ export const Singup = () => {
 
     return (
         <div className="container">
-            <h2>Singup</h2>
+            <h2>Cadastro</h2>
             <form onSubmit={handleSubmit} >
                 <label>Email</label>
                 <input 
@@ -50,22 +55,30 @@ export const Singup = () => {
                     onChange={(element) => {setEmail(element.target.value)}}
                 />
 
-                <label>Password</label>
+                <label>Senha</label>
                 <input 
                     type="password"
                     value={password}
                     onChange={(element) => {setPassword(element.target.value)}}
                 />
 
-                <label>Password Confirm</label>
+                <label>Confirmar senha</label>
                 <input 
                     type="password"
                     value={confirmPassword}
                     onChange={(element) => {setConfirmPassword(element.target.value)}}
                 />
 
-                <button className="button-block" type="submit">Singup</button>
+                <button disabled={loading} className="button-block" type="submit">Cadastrar</button>
             </form>
+
+            <div className="center">
+                <div>
+                    <p>
+                        Ja tem uma conta? <Link to="/login">Entrar </Link>
+                    </p>
+                </div>
+            </div>
         </div>
     )
 }

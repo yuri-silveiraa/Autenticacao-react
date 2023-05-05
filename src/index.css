@@ -5,12 +5,12 @@
 }
 
 :root {
-  --primary-color: #3b2df9;
-  --primary-color-dark: #5048b6;
-  --neutral-background: #0f042b;
-  --neutral-text: #fff;
-  --neutral-link: #cc3358;
-  --neutral-link-hover: #952541;
+  --primary-color: #de9400;
+  --primary-color-dark: #9c5200;
+  --neutral-background: #623108;
+  --neutral-text: #ddddf8;
+  --neutral-link: #8bc5cd;
+  --neutral-link-hover: #297383;
 }
 
 .header {
@@ -61,6 +61,7 @@
   font-size: 1.6rem;
   line-height: 5.2rem;
   padding: 0;
+  margin-top: -50px;
   text-decoration: none;
 }
 
@@ -689,7 +690,7 @@ h6 {
 }
 
 img {
-  max-width: 100%;
+  max-width: 25%;
 }
 
 .clearfix:after {

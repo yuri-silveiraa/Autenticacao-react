@@ -30,7 +30,7 @@ export const Login = () => {
 
     return (
         <div className="container">
-        <h2>Login</h2>
+        <h2>Entrar</h2>
         <form onSubmit={handleSubmit}>
             <label>Email</label>
             <input 
@@ -39,13 +39,13 @@ export const Login = () => {
                 onChange={(element) => {setEmail(element.target.value)}}
             />
 
-            <label>Password</label>
+            <label>Senha</label>
             <input 
                 type="password"
                 value={password}
                 onChange={(element) => {setPassword(element.target.value)}}
             />
-            <button disabled={loading} className="button-block" type="submit">Login</button>
+            <button disabled={loading} className="button-block" type="submit">Entrar</button>
         </form>
 
         <div className="center">

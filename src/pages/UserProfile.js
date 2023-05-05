@@ -18,7 +18,7 @@ export const UserProfile = () => {
     return (
         <div className="container">
             <div className="header">
-            <h1>Perfil de Usuário</h1>
+            <h2>Perfil de Usuário</h2>
             <button onClick={handleLogout}>Sair</button>
             </div>
 
